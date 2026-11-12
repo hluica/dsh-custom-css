@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "User CSS",
+    "description": "Adds one General settings row that edits a custom CSS fragment and applies it to the interface live; only local files may be referenced."
+  }
+}
