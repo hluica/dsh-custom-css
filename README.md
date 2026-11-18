@@ -59,26 +59,26 @@
 
 常用变量及其浅/深取值：
 
-| 变量 | 用途 | 浅色 | 深色 |
-| --- | --- | --- | --- |
-| `--dsw-alias-bg-base` | 应用底色 | `…bluish-00` (#fff) | `…bluish-950` (#151517) |
-| `--dsw-alias-bg-layer-1/2/3` | 分层表面 | `bluish-00` | `bluish-875/850/800` |
-| `--dsw-alias-bg-overlay` | 浮层 | `bluish-150` | `bluish-700` |
-| `--dsw-alias-bg-module-platform` | 控件底色 | `bluish-60` | `bluish-800` |
-| `--dsw-alias-label-primary` | 主文字 | `bluish-1000` (#0f1115) | `bluish-50` (#f9fafb) |
-| `--dsw-alias-label-secondary` | 次文字 | `bluish-700` | `bluish-300` |
-| `--dsw-alias-label-tertiary` | 三级文字 | `bluish-600` | `bluish-400` |
-| `--dsw-alias-label-primary-foreground` | 主按钮上的文字 | `bluish-00` | `bluish-1000` |
-| `--dsw-alias-border-l1` … `l4` | 边框（由弱到强） | `#0000000a` → `#00000029` | `#ffffff0f` → `#fff3` |
-| `--dsw-alias-brand-primary` | 品牌主色 | `bluish-1000` | `bluish-50` |
-| `--dsw-alias-link` | 链接 | `deepseek-500` | `deepseek-400` |
-| `--dsw-alias-state-error-primary` | 错误 | `red-600` | `red-400` |
-| `--dsw-alias-state-success-primary` | 成功 | `green-500` | `green-500` |
-| `--dsw-alias-state-warn-primary` | 警告 | `amber-500` | `amber-500` |
-| `--dsw-alias-interactive-bg-hover` | 悬停底色 | `#2631480f` | `#ffffff14` |
-| `--dsw-alias-markdown-code-block` | 代码块底 | `bluish-50` | `bluish-900` |
-| `--dsw-specific-sidebar-fill` | 侧栏底色 | `bluish-50` | `bluish-900` |
-| `--dsw-alias-tooltip-bg` | 提示气泡 | `bluish-850` | `bluish-750` |
+| 变量                                   | 用途             | 浅色                      | 深色                    |
+| -------------------------------------- | ---------------- | ------------------------- | ----------------------- |
+| `--dsw-alias-bg-base`                  | 应用底色         | `…bluish-00` (#fff)       | `…bluish-950` (#151517) |
+| `--dsw-alias-bg-layer-1/2/3`           | 分层表面         | `bluish-00`               | `bluish-875/850/800`    |
+| `--dsw-alias-bg-overlay`               | 浮层             | `bluish-150`              | `bluish-700`            |
+| `--dsw-alias-bg-module-platform`       | 控件底色         | `bluish-60`               | `bluish-800`            |
+| `--dsw-alias-label-primary`            | 主文字           | `bluish-1000` (#0f1115)   | `bluish-50` (#f9fafb)   |
+| `--dsw-alias-label-secondary`          | 次文字           | `bluish-700`              | `bluish-300`            |
+| `--dsw-alias-label-tertiary`           | 三级文字         | `bluish-600`              | `bluish-400`            |
+| `--dsw-alias-label-primary-foreground` | 主按钮上的文字   | `bluish-00`               | `bluish-1000`           |
+| `--dsw-alias-border-l1` … `l4`         | 边框（由弱到强） | `#0000000a` → `#00000029` | `#ffffff0f` → `#fff3`   |
+| `--dsw-alias-brand-primary`            | 品牌主色         | `bluish-1000`             | `bluish-50`             |
+| `--dsw-alias-link`                     | 链接             | `deepseek-500`            | `deepseek-400`          |
+| `--dsw-alias-state-error-primary`      | 错误             | `red-600`                 | `red-400`               |
+| `--dsw-alias-state-success-primary`    | 成功             | `green-500`               | `green-500`             |
+| `--dsw-alias-state-warn-primary`       | 警告             | `amber-500`               | `amber-500`             |
+| `--dsw-alias-interactive-bg-hover`     | 悬停底色         | `#2631480f`               | `#ffffff14`             |
+| `--dsw-alias-markdown-code-block`      | 代码块底         | `bluish-50`               | `bluish-900`            |
+| `--dsw-specific-sidebar-fill`          | 侧栏底色         | `bluish-50`               | `bluish-900`            |
+| `--dsw-alias-tooltip-bg`               | 提示气泡         | `bluish-850`              | `bluish-750`            |
 
 还有 `--dsw-static-*` 静态色阶（不随主题变化）与 `--dsw-font-*` 字排变量。**完整清单**请在 DevTools 里查看 `body` 的计算样式，或用设置里的插件行编辑框旁提示的方式检索。
 
@@ -93,11 +93,11 @@
 
 判定规则：带协议（`http:`、`https:`、`data:`、`file:`、`blob:`、`ftp:` 等）或协议相对（`//host/…`）即视为外部。
 
-| 写法 | 结果 |
-| --- | --- |
+| 写法                                                             | 结果   |
+| ---------------------------------------------------------------- | ------ |
 | `url(./x.png)`、`url(../x.png)`、`url(/abs/x.png)`、`url(#grad)` | ✅ 允许 |
-| `url(https://…)`、`url(//host/…)`、`url(data:…)`、`url(file:…)` | ❌ 拦截 |
-| `@import "https://…"`、`@import url(https://…)` | ❌ 拦截 |
+| `url(https://…)`、`url(//host/…)`、`url(data:…)`、`url(file:…)`  | ❌ 拦截 |
+| `@import "https://…"`、`@import url(https://…)`                  | ❌ 拦截 |
 
 注释中的引用不会被误判。除该限制外，**不做任何 CSS 语法校验或格式化**。
 
@@ -115,18 +115,18 @@
 
 ## 结构
 
-| 文件 | 作用 |
-| --- | --- |
-| `index.js` | Host 半：持有设置命名空间 `dsh-custom-css` 与字段 `css`。不做校验，不注入 HTML |
-| `client.js` | 客户端半：`<style>` 注入、外链扫描、设置行组件、字典 |
-| `cordis.patch.yml` | bundle 挂载声明（把条目插入 profile 配置树） |
-| `locale/zh.json`、`locale/en.json` | **插件页面的显示名与说明**（见下） |
-| `icon.svg` | 插件页面图标 |
-| `package.json` | `exports["./client"]` + `exports["./locale/*.json"]` + `dsh.client` + `dsh.bundle` + 构建脚本 |
-| `deps.lock.json` | 运行期依赖锁定：精确版本、tarball integrity、每个包**只留哪些文件** |
-| `scripts/build.mjs`、`scripts/verify.mjs`、`scripts/lib/` | 依赖物化与不变量检查（见「[依赖与构建](#依赖与构建)」） |
-| `node_modules/` | **构建产物**：真实文件，无符号连接。由 `npm run build` 生成，勿手工增删 |
-| `.cache/` | tarball 缓存（`npm run clean` 一并删除）：让重建不必联网 |
+| 文件                                                      | 作用                                                                                          |
+| --------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `index.js`                                                | Host 半：持有设置命名空间 `dsh-custom-css` 与字段 `css`。不做校验，不注入 HTML                |
+| `client.js`                                               | 客户端半：`<style>` 注入、外链扫描、设置行组件、字典                                          |
+| `cordis.patch.yml`                                        | bundle 挂载声明（把条目插入 profile 配置树）                                                  |
+| `locale/zh.json`、`locale/en.json`                        | **插件页面的显示名与说明**（见下）                                                            |
+| `icon.svg`                                                | 插件页面图标                                                                                  |
+| `package.json`                                            | `exports["./client"]` + `exports["./locale/*.json"]` + `dsh.client` + `dsh.bundle` + 构建脚本 |
+| `deps.lock.json`                                          | 运行期依赖锁定：精确版本、tarball integrity、每个包**只留哪些文件**                           |
+| `scripts/build.mjs`、`scripts/verify.mjs`、`scripts/lib/` | 依赖物化与不变量检查（见「[依赖与构建](#依赖与构建)」）                                       |
+| `node_modules/`                                           | **构建产物**：真实文件，无符号连接。由 `npm run build` 生成，勿手工增删                       |
+| `.cache/`                                                 | tarball 缓存（`npm run clean` 一并删除）：让重建不必联网                                      |
 
 ### 插件页面显示名从哪来
 
@@ -164,31 +164,31 @@ node_modules/.dsh-vendor.json          # 构建凭据：锁文件摘要 + 每个
 
 `node_modules/` 是**产物**，`index.js` / `client.js` 是**源码**。这条分工决定了日常怎么用：
 
-| 你改了什么 | 要做什么 |
-| --- | --- |
-| `index.js`、`client.js`、`locale/*.json`、`icon.svg`、`cordis.patch.yml` | **什么都不用做**。它们不是构建产物：客户端半由 HMR 重载，CSS 本来就在设置里热生效 |
-| `package.json` 的 `dependencies`，或 `deps.lock.json` | `npm run build`，然后**重启 Host**——Host 半的模块已被缓存，依赖换了不会热生效 |
-| 要判断「这个插件现在是健康的吗」 | `npm run verify`。**让用户重启 Host 之前先跑它**，比重启完再发现「已启用但未运行」便宜得多 |
-| 要加或换一个运行期依赖 | `node scripts/build.mjs --pin <name>@<version>`，见「[新增 / 升级依赖](#新增--升级依赖)」 |
+| 你改了什么                                                               | 要做什么                                                                                   |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `index.js`、`client.js`、`locale/*.json`、`icon.svg`、`cordis.patch.yml` | **什么都不用做**。它们不是构建产物：客户端半由 HMR 重载，CSS 本来就在设置里热生效          |
+| `package.json` 的 `dependencies`，或 `deps.lock.json`                    | `npm run build`，然后**重启 Host**——Host 半的模块已被缓存，依赖换了不会热生效              |
+| 要判断「这个插件现在是健康的吗」                                         | `npm run verify`。**让用户重启 Host 之前先跑它**，比重启完再发现「已启用但未运行」便宜得多 |
+| 要加或换一个运行期依赖                                                   | `node scripts/build.mjs --pin <name>@<version>`，见「[新增 / 升级依赖](#新增--升级依赖)」  |
 
 ### 命令
 
-| 命令 | 作用 |
-| --- | --- |
-| `npm run build` | 按 `package.json` + `deps.lock.json` 物化依赖，然后跑一遍 `verify` |
-| `npm run verify` | 只检查：真实文件不变量、依赖与锁逐字节一致、`package.json` 的 DSH 契约、Host 半能否导入 |
-| `npm run rebuild` | 即 `build --force`：即使树已是最新也重写一遍 |
-| `npm run clean` | 删除 `node_modules/` 与 `.cache/` |
+| 命令              | 作用                                                                                    |
+| ----------------- | --------------------------------------------------------------------------------------- |
+| `npm run build`   | 按 `package.json` + `deps.lock.json` 物化依赖，然后跑一遍 `verify`                      |
+| `npm run verify`  | 只检查：真实文件不变量、依赖与锁逐字节一致、`package.json` 的 DSH 契约、Host 半能否导入 |
+| `npm run rebuild` | 即 `build --force`：即使树已是最新也重写一遍                                            |
+| `npm run clean`   | 删除 `node_modules/` 与 `.cache/`                                                       |
 
 `build` 的顺序是：解析 `package.json` → `deps.lock.json` 的依赖闭包 → 从缓存或 registry 取 tarball（**逐个校验 sha512 integrity**）→ 只解出白名单里的文件 → 整棵替换 `node_modules/` → 清掉 macOS 边角文件 → 运行 `verify`。**所有下载与校验都在旧树被删之前完成**，所以断网或 integrity 不符时旧树原封不动。
 
-| 选项 | 作用 |
-| --- | --- |
-| `--offline` | 只用 `.cache/tarballs/`，不联网（首次构建后即可离线重建） |
-| `--registry=<url>` | 换源，例如 `--registry=https://registry.npmmirror.com`；integrity 仍按锁文件校验，镜像给了不同字节就失败 |
-| `--pin <name>@<version>` | 从 registry 取这个版本的 `resolved`/`integrity`/依赖边写进锁，然后照常构建 |
-| `--force` | 无视「已是最新」，强制重写整棵树 |
-| `--no-verify` | 只构建不校验（调试用） |
+| 选项                     | 作用                                                                                                     |
+| ------------------------ | -------------------------------------------------------------------------------------------------------- |
+| `--offline`              | 只用 `.cache/tarballs/`，不联网（首次构建后即可离线重建）                                                |
+| `--registry=<url>`       | 换源，例如 `--registry=https://registry.npmmirror.com`；integrity 仍按锁文件校验，镜像给了不同字节就失败 |
+| `--pin <name>@<version>` | 从 registry 取这个版本的 `resolved`/`integrity`/依赖边写进锁，然后照常构建                               |
+| `--force`                | 无视「已是最新」，强制重写整棵树                                                                         |
+| `--no-verify`            | 只构建不校验（调试用）                                                                                   |
 
 ### 新增 / 升级依赖
 
@@ -209,11 +209,11 @@ node scripts/build.mjs --pin semver@7.7.2                     # 新条目：自�
 
 `vendor` 白名单是「优化」的落点：已发布 tarball 里的 README、`lib/types/`、`src/`（TypeScript 源码）运行期永远不会被加载，因此不进树——三个包解包后 202 KiB / 40 个文件，进树的是 66 KiB / 7 个文件。三种取值：
 
-| 取值 | 含义 |
-| --- | --- |
-| `["package.json", "LICENSE", "lib/index.mjs", …]` | 显式白名单：只留这些文件（本插件当前用法，靠 `build` 与 `verify` 保证不漏） |
-| `"*"` | 全量保留：新 pin 的默认值。先保证 import 链完整（入口 import 兄弟文件时不会被裁坏），跑通后再收窄 |
-| `[]` | 一个字节都不装：包在闭包里只为把依赖图画完整 |
+| 取值                                              | 含义                                                                                              |
+| ------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `["package.json", "LICENSE", "lib/index.mjs", …]` | 显式白名单：只留这些文件（本插件当前用法，靠 `build` 与 `verify` 保证不漏）                       |
+| `"*"`                                             | 全量保留：新 pin 的默认值。先保证 import 链完整（入口 import 兄弟文件时不会被裁坏），跑通后再收窄 |
+| `[]`                                              | 一个字节都不装：包在闭包里只为把依赖图画完整                                                      |
 
 `@standard-schema/spec` 就是 `[]`：它在闭包里（schemastery 确实声明了 `^1.1.0`），但它是**纯类型**依赖，两个构建产物都没引用它，所以一个字节都不装——锁里仍记着它，闭包才是完整的。
 
@@ -294,3 +294,8 @@ node --input-type=module -e "await import('@local/dsh-custom-css'); console.log(
 
 **关键**：Node 会**永久缓存「导入失败」的结果**，因此已运行的 Host 无法重试——修好依赖后**必须重启 Host** 才能激活。这不是热更新能覆盖的情形。（`npm run verify` 之所以另起子进程导入，就是为了绕开这条缓存，给出可重复的答案。）
 
+---
+
+## 许可证
+
+MIT License，详见 [LICENSE](./LICENSE)。
